@@ -6,6 +6,7 @@ import { showNotification } from '../../common/headerSlice'
 import InputText from '../../../components/Input/InputText'
 import TextAreaInput from '../../../components/Input/TextAreaInput'
 import ToogleInput from '../../../components/Input/ToogleInput'
+import Roles from "./roles"
 
 function ProfileSettings(){
 
@@ -25,13 +26,17 @@ function ProfileSettings(){
         <>
             
             <TitleCard title="Profile Settings" topMargin="mt-2">
-
+                <div>
+                    <h1 className="p-2">Choose your profile role!</h1>
+                    <Roles />
+                </div>
+                <div className="divider" ></div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <InputText labelTitle="Name" defaultValue="Alex" updateFormValue={updateFormValue}/>
-                    <InputText labelTitle="Email Id" defaultValue="alex@dashwind.com" updateFormValue={updateFormValue}/>
-                    <InputText labelTitle="Title" defaultValue="UI/UX Designer" updateFormValue={updateFormValue}/>
+                    <InputText labelTitle="Name" defaultValue="John Doe" updateFormValue={updateFormValue}/>
+                    <InputText labelTitle="Email Id" defaultValue="johndoe@example.com" updateFormValue={updateFormValue}/>
+                    <InputText labelTitle="Title" defaultValue="CEO" updateFormValue={updateFormValue}/>
                     <InputText labelTitle="Place" defaultValue="California" updateFormValue={updateFormValue}/>
-                    <TextAreaInput labelTitle="About" defaultValue="Doing what I love, part time traveller" updateFormValue={updateFormValue}/>
+                    <TextAreaInput labelTitle="About" defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." updateFormValue={updateFormValue}/>
                 </div>
                 <div className="divider" ></div>
 

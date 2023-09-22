@@ -19,20 +19,20 @@ module.exports = Object.freeze({
     ],
 
     RECENT_TRANSACTIONS : [
-        {id: 0, name : "Alex", avatar : "https://reqres.in/img/faces/1-image.jpg", title : "Experineced Python developer with AI", "skills": ["Python", "AI"],
+        {id: 0, name : "Alex", avatar : "https://reqres.in/img/faces/1-image.jpg", title : "Experienced Python developer with AI", "skills": ["Python", "AI"],
         "minPrice": {
           "value": 50,
           "currency": "EUR",
           "contractType": "B2B"
         }, location : "Paris", amount : 100, date : moment().endOf('day')},
-        {id: 1, name : "Ereena", avatar : "https://reqres.in/img/faces/2-image.jpg",         "title": "Fullstack web dev with Java & Angular",
+        {id: 1, name : "Ereena", avatar : "https://reqres.in/img/faces/2-image.jpg",         "title": "Full-stack web dev with Java & Angular",
         "skills": ["Java", "Angular"],
         "minPrice": {
           "value": 40,
           "currency": "EUR",
           "contractType": "B2B"
         } , location : "London", amount : 190, date : moment().add(-1, 'd').endOf('day')},
-        {id: 2, name : "John", avatar : "https://reqres.in/img/faces/3-image.jpg",         "title": "Junior frontend developer",
+        {id: 2, name : "John", avatar : "https://reqres.in/img/faces/3-image.jpg",         "title": "Junior front-end developer",
         "skills": ["React.js", "HTML", "CSS"],
         "minPrice": {
           "value": 30,
