@@ -7,11 +7,12 @@ const Welcome = lazy(() => import('../pages/protected/Welcome'))
 const Page404 = lazy(() => import('../pages/protected/404'))
 const Blank = lazy(() => import('../pages/protected/Blank'))
 const Charts = lazy(() => import('../pages/protected/Charts'))
-const Leads = lazy(() => import('../pages/protected/Leads'))
+const Leads = lazy(() => import('../pages/protected/Auctions'))
 const Integration = lazy(() => import('../pages/protected/Integration'))
 const Calendar = lazy(() => import('../pages/protected/Calendar'))
 const Team = lazy(() => import('../pages/protected/Team'))
 const Transactions = lazy(() => import('../pages/protected/Transactions'))
+const Transaction = lazy(() => import('../pages/protected/Transaction'))
 const Bills = lazy(() => import('../pages/protected/Bills'))
 const ProfileSettings = lazy(() => import('../pages/protected/ProfileSettings'))
 const GettingStarted = lazy(() => import('../pages/GettingStarted'))
@@ -20,17 +21,29 @@ const DocComponents = lazy(() => import('../pages/DocComponents'))
 
 
 const routes = [
+  // {
+  //   path: '/dashboard', // the url
+  //   component: Dashboard, // view rendered
+  // },
+  // {
+  //   path: '/welcome', // the url
+  //   component: Welcome, // view rendered
+  // },
   {
-    path: '/dashboard', // the url
-    component: Dashboard, // view rendered
+    path: '/auctions',
+    component: Transactions,
   },
   {
-    path: '/welcome', // the url
-    component: Welcome, // view rendered
+    path: '/auctions/0',
+    component: Transaction,
   },
   {
-    path: '/leads',
-    component: Leads,
+    path: '/auctions/1',
+    component: Transaction,
+  },
+  {
+    path: '/auctions/2',
+    component: Transaction,
   },
   {
     path: '/settings-team',

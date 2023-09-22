@@ -77,7 +77,7 @@ function Transactions(){
     return(
         <>
             
-            <TitleCard title="Recent Transactions" topMargin="mt-2" TopSideButtons={<TopSideButtons applySearch={applySearch} applyFilter={applyFilter} removeFilter={removeFilter}/>}>
+            <TitleCard title="Latest auctions" topMargin="mt-2" TopSideButtons={<TopSideButtons applySearch={applySearch} applyFilter={applyFilter} removeFilter={removeFilter}/>}>
 
                 {/* Team Member list in table format loaded constant */}
             <div className="overflow-x-auto w-full">
@@ -85,17 +85,17 @@ function Transactions(){
                     <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Email Id</th>
-                        <th>Location</th>
+                        <th>Title</th>
+                        <th>Skills</th>
                         <th>Amount</th>
-                        <th>Transaction Date</th>
+                        <th>Added</th>
                     </tr>
                     </thead>
                     <tbody>
                         {
                             trans.map((l, k) => {
                                 return(
-                                    <tr key={k}>
+                                    <tr key={k} onClick={() => { window.location.href = `/app/auctions/${k}` }} className="cursor-pointer">
                                     <td>
                                         <div className="flex items-center space-x-3">
                                             <div className="avatar">
@@ -108,11 +108,12 @@ function Transactions(){
                                             </div>
                                         </div>
                                     </td>
-                                    <td>{l.email}</td>
-                                    <td>{l.location}</td>
+                                    <td>{l.title}</td>
+                                    <td>{l.skills.map((skill, index) => <span key={index}>{`${skill} `}</span>)}</td>
                                     <td>${l.amount}</td>
                                     <td>{moment(l.date).format("D MMM")}</td>
                                     </tr>
+                                    
                                 )
                             })
                         }
