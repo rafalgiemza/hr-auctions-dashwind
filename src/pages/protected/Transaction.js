@@ -1,15 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { setPageTitle } from '../../features/common/headerSlice'
+import { setPageTitle, showNotification } from '../../features/common/headerSlice'
 import { RECENT_TRANSACTIONS } from '../../utils/dummyData'
 import { NavLink, useHref } from 'react-router-dom'
-import TitleCard from '../../components/Cards/TitleCard'
-import InputText from '../../components/Input/InputText'
-import TextAreaInput from '../../components/Input/TextAreaInput'
-import ToogleInput from '../../components/Input/ToogleInput'
 
 function InternalPage(props) {
-    console.log("🚀 ~ file: Transaction.js:6 ~ InternalPage ~ props:", props)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -20,6 +15,11 @@ function InternalPage(props) {
     const href = useHref()
     const slug = href.slice(-1)
     const [trans, setTrans] = useState(RECENT_TRANSACTIONS[slug])
+    
+    const handleBid = (trans, event) => {
+        dispatch(showNotification({message : `Your offer for ${trans.title} was submitted ` , status : 1}))
+    }
+
 
 
     return (
@@ -40,7 +40,7 @@ function InternalPage(props) {
                     <div className="card-actions justify-end">
                         <kbd className="kbd kbd-lg">{trans.minPrice.value} {trans.minPrice.currency}</kbd>
                         <input type="number" placeholder="Your price" className="input input-bordered w-full max-w-xs" />
-                        <button className="btn btn-primary">Submit</button>
+                        <button onClick={() => handleBid(trans)} className="btn btn-primary">Submit</button>
                     </div>
                 </div>
             </div>

@@ -6,7 +6,7 @@ import { showNotification } from "../../common/headerSlice"
 
 
 const INITIAL_INTEGRATION_LIST = [
-    {name : "Recruter profile", icon : "https://cdn-icons-png.flaticon.com/512/2111/2111615.png", isActive : false, description : "As recruter you can take a part in auctions"},
+    {name : "Recruiter profile", icon : "https://cdn-icons-png.flaticon.com/512/2111/2111615.png", isActive : false, description : "As recruter you can take a part in auctions"},
     {name : "Candidate profile", icon : "https://cdn-icons-png.flaticon.com/512/124/124010.png", isActive : false, description : "As a candidate you can offer your services"},
 ]
 
