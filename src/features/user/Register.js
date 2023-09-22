@@ -21,7 +21,7 @@ function Register(){
         setErrorMessage("")
 
         if(registerObj.name.trim() === "")return setErrorMessage("Name is required! (use any value)")
-        if(registerObj.emailId.trim() === "")return setErrorMessage("Email Id is required! (use any value)")
+        if(registerObj.emailId.trim() === "")return setErrorMessage("Email is required! (use any value)")
         if(registerObj.password.trim() === "")return setErrorMessage("Password is required! (use any value)")
         else{
             setLoading(true)
@@ -52,7 +52,7 @@ function Register(){
 
                             <InputText defaultValue={registerObj.name} updateType="name" containerStyle="mt-4" labelTitle="Name" updateFormValue={updateFormValue}/>
 
-                            <InputText defaultValue={registerObj.emailId} updateType="emailId" containerStyle="mt-4" labelTitle="Email Id" updateFormValue={updateFormValue}/>
+                            <InputText defaultValue={registerObj.emailId} updateType="emailId" containerStyle="mt-4" labelTitle="Email" updateFormValue={updateFormValue}/>
 
                             <InputText defaultValue={registerObj.password} type="password" updateType="password" containerStyle="mt-4" labelTitle="Password" updateFormValue={updateFormValue}/>
 

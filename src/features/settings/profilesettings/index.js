@@ -33,7 +33,7 @@ function ProfileSettings(){
                 <div className="divider" ></div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <InputText labelTitle="Name" defaultValue="John Doe" updateFormValue={updateFormValue}/>
-                    <InputText labelTitle="Email Id" defaultValue="johndoe@example.com" updateFormValue={updateFormValue}/>
+                    <InputText labelTitle="Email" defaultValue="johndoe@example.com" updateFormValue={updateFormValue}/>
                     <InputText labelTitle="Position" defaultValue="CEO" updateFormValue={updateFormValue}/>
                     <InputText labelTitle="Company name" defaultValue="Google" updateFormValue={updateFormValue}/>
                 </div>

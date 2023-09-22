@@ -84,8 +84,8 @@ function Transactions() {
                                 trans.map((l, k) => {
                                     return (
                                         <tr key={k} className="cursor-pointer hover:contrast-200 hover:underline">
-                                            <NavLink end to={`/app/auctions/${k}`}>
                                                 <td>
+                                            <NavLink end to={`/app/auctions/${k}`}>
                                                     <div className="flex items-center space-x-3">
                                                         <div className="avatar">
                                                             <div className="mask mask-circle w-12 h-12">
@@ -96,12 +96,12 @@ function Transactions() {
                                                             <div className="font-bold">{l.name}</div>
                                                         </div>
                                                     </div>
-                                                </td>
                                             </NavLink>
-                                            <td>{l.title}</td>
-                                            <td>{l.skills.map((skill, index) => <span key={index}>{`${skill} `}</span>)}</td>
-                                            <td>${l.minPrice.value}</td>
-                                            <td>{moment(l.date).format("D MMM")}</td>
+                                                </td>
+                                            <td><NavLink end to={`/app/auctions/${k}`}>{l.title}</NavLink></td>
+                                            <td><NavLink end to={`/app/auctions/${k}`}>{l.skills.map((skill, index) => <span key={index}>{`${skill} `}</span>)}</NavLink></td>
+                                            <td><NavLink end to={`/app/auctions/${k}`}>${l.minPrice.value}</NavLink></td>
+                                            <td><NavLink end to={`/app/auctions/${k}`}>{moment(l.date).format("D MMM")}</NavLink></td>
                                         </tr>
                                     )
                                 })
