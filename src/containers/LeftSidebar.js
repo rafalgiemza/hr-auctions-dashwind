@@ -24,7 +24,7 @@ function LeftSidebar(){
 
                 <li className="mb-2 font-semibold text-xl">
                     
-                    <Link to={'/app/welcome'}>HR Auctions</Link> </li>
+                    <Link to={'/app/auctions'}>HR Auctions</Link> </li>
                 {
                     routes.map((route, k) => {
                         return(
