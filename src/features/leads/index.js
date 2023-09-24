@@ -1,5 +1,6 @@
 import moment from "moment"
 import { useEffect, useState } from "react"
+import { NavLink } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import TitleCard from "../../components/Cards/TitleCard"
 import { openModal } from "../common/modalSlice"
@@ -7,11 +8,19 @@ import { deleteLead, getAuctionsContent } from "./auctionSlice"
 import { CONFIRMATION_MODAL_CLOSE_TYPES, MODAL_BODY_TYPES } from '../../utils/globalConstantUtil'
 import TrashIcon from '@heroicons/react/24/outline/TrashIcon'
 import { showNotification } from '../common/headerSlice'
-import { NavLink } from "react-router-dom"
+import SearchBar from "../../components/Input/SearchBar"
 
-const TopSideButtons = () => {
+
+const TopSideButtons = ({applySearch}) => {
 
     const dispatch = useDispatch()
+
+    const [searchText, setSearchText] = useState("")
+
+    useEffect(() => {
+        applySearch(searchText)
+    }, [searchText])
+
 
     const openAddNewLeadModal = () => {
         dispatch(openModal({ title: "Add New Lead", bodyType: MODAL_BODY_TYPES.LEAD_ADD_NEW }))
@@ -19,6 +28,7 @@ const TopSideButtons = () => {
 
     return (
         <div className="inline-block float-right">
+            <SearchBar searchText={searchText} styleClass="mr-4" setSearchText={setSearchText} />
             <button className="btn px-6 btn-sm normal-case btn-primary" onClick={() => openAddNewLeadModal()}>Add New</button>
         </div>
     )
@@ -31,6 +41,20 @@ function Auctions() {
     console.log("🚀 ~ file: index.js:29 ~ Auctions ~ leads:", leads)
     const dispatch = useDispatch()
 
+    const removeFilter = () => {
+        setFilteredLeads(leads)
+    }
+
+    const applyFilter = (params) => {
+        let filteredTransactions = leads.filter((t) => { return t.location == params })
+        setFilteredLeads(filteredTransactions)
+    }
+
+    const applySearch = (value) => {
+        let filteredTransactions = leads.filter((t) => { return t.title.toLowerCase().includes(value.toLowerCase()) || t.title.toLowerCase().includes(value.toLowerCase()) })
+        setFilteredLeads(filteredTransactions)
+    }
+
     useEffect(() => {
         dispatch(getAuctionsContent())
     }, [])
@@ -42,8 +66,8 @@ function Auctions() {
     return (
         <>
 
-            <TitleCard title="Current Auctions" topMargin="mt-2" TopSideButtons={<TopSideButtons />}>
-                {/* Auctions List in table format loaded from slice after api call */}
+        <TitleCard title="Latest auctions" topMargin="mt-2" TopSideButtons={<TopSideButtons applySearch={applySearch} applyFilter={applyFilter} removeFilter={removeFilter} />}>
+            {/* Auctions List in table format loaded from slice after api call */}
                 <div className="overflow-x-auto w-full">
                     <table className="table w-full">
                         <thead>
