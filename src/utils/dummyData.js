@@ -43,13 +43,13 @@ module.exports = Object.freeze({
     ],
 
     latest_auctions : [
-    //   {id: 0, name : "Alex", avatar : "https://reqres.in/img/faces/1-image.jpg", title : "Experienced Python developer with AI", "skills": ["Python", "AI"],
-    //   "minPrice": {
-    //     "value": 50,
-    //     "currency": "USD",
-    //     "contractType": "B2B"
-    //   }, 
-    // },
+      {id: 0, name : "Alex", avatar : "https://reqres.in/img/faces/1-image.jpg", title : "Experienced Python developer with AI", "skills": ["Python", "AI"],
+      "minPrice": {
+        "value": 50,
+        "currency": "USD",
+        "contractType": "B2B"
+      }, 
+    },
       {id: 1, name : "Ereena", avatar : "https://reqres.in/img/faces/2-image.jpg",         "title": "Full-stack web dev with Java & Angular",
       "skills": ["Java", "Angular"],
       "minPrice": {
