@@ -40,5 +40,31 @@ module.exports = Object.freeze({
           "contractType": "B2B"
         } , location : "Canada", amount : 112, date : moment().add(-1, 'd').endOf('day')},
 
-    ]
+    ],
+
+    latest_auctions : [
+      {id: 0, name : "Alex", avatar : "https://reqres.in/img/faces/1-image.jpg", title : "Experienced Python developer with AI", "skills": ["Python", "AI"],
+      "minPrice": {
+        "value": 50,
+        "currency": "EUR",
+        "contractType": "B2B"
+      }, 
+    },
+      {id: 1, name : "Ereena", avatar : "https://reqres.in/img/faces/2-image.jpg",         "title": "Full-stack web dev with Java & Angular",
+      "skills": ["Java", "Angular"],
+      "minPrice": {
+        "value": 40,
+        "currency": "EUR",
+        "contractType": "B2B"
+      } , 
+    },
+      {id: 2, name : "John", avatar : "https://reqres.in/img/faces/3-image.jpg",         "title": "Junior front-end developer",
+      "skills": ["React.js", "HTML", "CSS"],
+      "minPrice": {
+        "value": 30,
+        "currency": "EUR",
+        "contractType": "B2B"
+      } , 
+    },
+  ]
 });
