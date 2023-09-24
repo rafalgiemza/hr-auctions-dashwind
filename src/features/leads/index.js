@@ -3,7 +3,7 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import TitleCard from "../../components/Cards/TitleCard"
 import { openModal } from "../common/modalSlice"
-import { deleteLead, getLeadsContent } from "./leadSlice"
+import { deleteLead, getAuctionsContent } from "./auctionSlice"
 import { CONFIRMATION_MODAL_CLOSE_TYPES, MODAL_BODY_TYPES } from '../../utils/globalConstantUtil'
 import TrashIcon from '@heroicons/react/24/outline/TrashIcon'
 import { showNotification } from '../common/headerSlice'
@@ -23,13 +23,13 @@ const TopSideButtons = () => {
     )
 }
 
-function Leads(){
+function Auctions(){
 
     const {leads } = useSelector(state => state.lead)
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(getLeadsContent())
+        dispatch(getAuctionsContent())
     }, [])
 
     
@@ -50,9 +50,9 @@ function Leads(){
     return(
         <>
             
-            <TitleCard title="Current Leads" topMargin="mt-2" TopSideButtons={<TopSideButtons />}>
+            <TitleCard title="Current Auctions" topMargin="mt-2" TopSideButtons={<TopSideButtons />}>
 
-                {/* Leads List in table format loaded from slice after api call */}
+                {/* Auctions List in table format loaded from slice after api call */}
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     <thead>
@@ -101,4 +101,4 @@ function Leads(){
 }
 
 
-export default Leads
+export default Auctions
