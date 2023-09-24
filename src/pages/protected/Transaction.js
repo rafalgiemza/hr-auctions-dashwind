@@ -36,7 +36,6 @@ function InternalPage(props) {
                     {trans.skills.map((skill, key) => (
                         <span key={key} className="badge">{skill}</span>
                     ))}
-                    <span className="badge">Badge</span>
                     <div className="card-actions justify-end">
                         <kbd className="kbd kbd-lg">{trans.minPrice.value} {trans.minPrice.currency}</kbd>
                         <input type="number" placeholder="Your price" className="input input-bordered w-full max-w-xs" />

@@ -23,7 +23,7 @@ const TopSideButtons = ({applySearch}) => {
 
 
     const openAddNewLeadModal = () => {
-        dispatch(openModal({ title: "Add New Lead", bodyType: MODAL_BODY_TYPES.LEAD_ADD_NEW }))
+        dispatch(openModal({ title: "Add New Lead", bodyType: MODAL_BODY_TYPES.AUCTION_ADD_NEW }))
     }
 
     return (
@@ -38,7 +38,6 @@ function Auctions() {
     const [filteredLeads, setFilteredLeads] = useState([])
 
     const { leads } = useSelector(state => state.lead)
-    console.log("🚀 ~ file: index.js:29 ~ Auctions ~ leads:", leads)
     const dispatch = useDispatch()
 
     const removeFilter = () => {
