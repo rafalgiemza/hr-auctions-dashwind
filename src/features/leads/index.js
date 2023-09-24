@@ -89,19 +89,19 @@ function Auctions() {
                                                     <div className="flex items-center space-x-3">
                                                         <div className="avatar">
                                                             <div className="mask mask-circle w-12 h-12">
-                                                                <img src={l.avatar} alt="Avatar" />
+                                                                <img src={l?.avatar} alt="Avatar" />
                                                             </div>
                                                         </div>
                                                         <div>
-                                                            <div className="font-bold">{l.name}</div>
+                                                            <div className="font-bold">{l?.name}</div>
                                                         </div>
                                                     </div>
                                                 </NavLink>
                                             </td>
-                                            <td><NavLink end to={`/app/auctions/${k}`}>{l.title}</NavLink></td>
-                                            <td><NavLink end to={`/app/auctions/${k}`}>{l.skills.map((skill, index) => <span key={index}>{`${skill} `}</span>)}</NavLink></td>
-                                            <td><NavLink end to={`/app/auctions/${k}`}>${l.minPrice.value}</NavLink></td>
-                                            <td><NavLink end to={`/app/auctions/${k}`}>{moment(l.date).format("D MMM")}</NavLink></td>
+                                            <td><NavLink end to={`/app/auctions/${k}`}>{l?.title}</NavLink></td>
+                                            <td><NavLink end to={`/app/auctions/${k}`}>{l?.skills?.map((skill, index) => <span key={index}>{`${skill} `}</span>)}</NavLink></td>
+                                            <td><NavLink end to={`/app/auctions/${k}`}>${l?.minPrice?.value}</NavLink></td>
+                                            <td><NavLink end to={`/app/auctions/${k}`}>{moment(l?.date).format("D MMM")}</NavLink></td>
                                         </tr>
                                     )
                                 })

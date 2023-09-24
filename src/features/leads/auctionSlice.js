@@ -6,10 +6,7 @@ import { latest_auctions } from '../../utils/dummyData'
 
 export const getAuctionsContent = createAsyncThunk('/leads/content', async () => {
 	const response = await axios.get('/api/users?page=2', {})
-	console.log("🚀 ~ file: auctionSlice.js:9 ~ getAuctionsContent ~ response:", response.data)
-    console.log("🚀 ~ file: auctionSlice.js:11 ~ getAuctionsContent ~ latest_auctions:", latest_auctions)
     return { data: latest_auctions};
-	// return response.data;
 })
 
 export const leadsSlice = createSlice({
