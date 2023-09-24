@@ -24,12 +24,13 @@ function AddAuctionModalBody({ closeModal }) {
         else {
             let newLeadObj = {
                 "id": 7,
+                "name": "Alex",
                 "minPrice": {
                     value: leadObj.price
                 },
                 "title": leadObj.title,
                 "skills": leadObj.skills.trim().split(','),
-                "avatar": "https://reqres.in/img/faces/5-image.jpg"
+                "avatar": "https://reqres.in/img/faces/1-image.jpg"
             }
             dispatch(addNewLead({ newLeadObj }))
             dispatch(showNotification({ message: "New auction added!", status: 1 }))
